@@ -13,7 +13,9 @@
   "author": "ben",
   "license": "ISC",
   "dependencies": {
+    "antd": "^2.11.2",
     "axios": "^0.16.2",
+    "babel-plugin-import": "^1.2.1",
     "express": "^4.15.3",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",

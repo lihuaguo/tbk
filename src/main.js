@@ -1,9 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Button } from 'antd'
 import './main.less'
 
 const App = () => (
-  <div>Components</div>
+  <div>
+    <Button>Hello world</Button>
+  </div>
 )
 
 ReactDOM.render(

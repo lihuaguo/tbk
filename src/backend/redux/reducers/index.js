@@ -1,6 +1,5 @@
 // import { fromJS } from 'immutable';
-// import { LOADING } from '../constants/dispatchTypes';
-const LOADING = 'LOADING'
+import { LOADING } from '../constants/dispatchTypes';
 
 import { combineReducers } from 'redux'
 

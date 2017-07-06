@@ -55,7 +55,6 @@ class LoginContainer extends React.Component {
   render() {
     const { loading } = this.props;
     const { getFieldDecorator } = this.props.form
-    console.log(loading)
     return (
       <div className="login-container">
         <div className="login-form">

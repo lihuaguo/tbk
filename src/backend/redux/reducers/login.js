@@ -1,5 +1,5 @@
-// import { LOGIN_SUCCESS } from '../../constants/loginTypes';
-const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+import { LOGIN_SUCCESS } from '../constants/dispatchTypes';
+// const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 
 // 初始化state数据
 const initialState = {

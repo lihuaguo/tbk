@@ -114,11 +114,11 @@ const LoginForm = Form.create()(LoginContainer);
 
 // 将 store 中的数据作为 props 绑定到 LoginForm 上
 const mapStateToProps = (state, ownProps) => {
-    // let { Common, Login } = state;
-    // return {
-    //     loading: Common.loading,
-    //     loginInfo: Login.loginInfo
-    // }
+    let { Common, Login } = state;
+    return {
+        loading: Common.loading,
+        loginInfo: Login.loginInfo
+    }
 }
 
 // 将 action 作为 props 绑定到 Product 上。

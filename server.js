@@ -8,7 +8,11 @@ const webpackConfig = require('./webpack.config')
 const app = express()
 const compiler = webpack(webpackConfig)
 
-app.use(webpackDevMiddleware(compiler))
+app.use(webpackDevMiddleware(compiler, {
+  stats: {
+    colors: true
+  }
+}))
 app.use(webpackHotMiddleware(compiler))
 
 

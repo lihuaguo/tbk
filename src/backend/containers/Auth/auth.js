@@ -5,7 +5,7 @@ class Auth extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      token: ''
+      token: 'ddd'
     }
   }
   render() {

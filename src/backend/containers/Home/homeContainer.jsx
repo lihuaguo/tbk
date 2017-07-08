@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import styles from './style/home.less'
 import Bcrumb from '../../components/bcrumb/index'
 
+import Layout from '../Layout/Layout'
+
 import { Icon, Row, Col, Card, Steps, Button, message } from 'antd'
 
 const Step = Steps.Step
@@ -86,4 +88,4 @@ class HomeContainer extends Component {
   }
 }
 
-export default connect()(HomeContainer)
+export default Layout(connect()(HomeContainer), 'Home')

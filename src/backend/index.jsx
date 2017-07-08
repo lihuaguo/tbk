@@ -1,11 +1,11 @@
 import React from 'react'
-import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Switch, Redirect, Route, Link } from 'react-router-dom'
 import styles from './common.less'
-import routes from './routes'
+// import routes from './routes'
 import { Layout } from 'antd'
 
 import Login from './containers/Login/loginContainer'
-import App from './containers/app'
+// import App from './containers/Home/HomeContainer'
 import Home from './containers/Home/homeContainer'
 
 const { Header, Footer, Sider, Content } = Layout
@@ -35,32 +35,31 @@ const test = () => (
     <p>Test Page</p>
   </div>
 )
-
-// const PrivateRoute = ({component: Component, ...rest}) => (
-//   <Route {...rest} render={ props => <Component {...props} /> } />
-// )
-
-class PrivateRoute extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    const { component } = this.props;
-    return {
-      <Layout>
-        <Sider>Sider</Sider>
-        <Layout>
-          <Header>Header</Header>
-          <Content>
-              <component {...this.props} />
-          </Content>
-          <Footer>Footer</Footer>
-        </Layout>
-      </Layout>
-    }
+const fakeAuth = {
+  isAuthenticated: true,
+  authenticate(cb) {
+    this.isAuthenticated = true
+    setTimeout(cb, 100) // 模拟异步。
+  },
+  signout(cb) {
+    this.isAuthenticated = false
+    setTimeout(cb, 100)
   }
 }
+
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  return (
+  <Route {...rest} render={props => (
+    fakeAuth.isAuthenticated ? (
+      <Component {...props}/>
+    ) : (
+      <Redirect to={{
+        pathname: '/login',
+        state: { from: props.location }
+      }}/>
+    )
+  )}/>
+)}
 
 class BackendApp extends React.Component {
   render() {
@@ -68,7 +67,7 @@ class BackendApp extends React.Component {
       <Router>
         <Switch>
           <PrivateRoute exact path="/" component={Home} />
-          <PrivateRoute exact path="/test" component={test} />
+          <PrivateRoute path="/test" component={test} />
           <Route path="/login" component={Login} />
         </Switch>
       </Router>

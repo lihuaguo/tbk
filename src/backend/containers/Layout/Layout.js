@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom'
 import { Layout } from 'antd'
 const { Header, Footer, Sider, Content } = Layout
 
+import './style/layout.less'
+
 export default (WrappedComponent, name) => {
   class LayoutComponent extends React.Component {
     constructor() {

@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import styles from './style/home.less'
 import Bcrumb from '../../components/bcrumb/index'
 
-import Layout from '../Layout/Layout'
+import LayoutWrapper from '../Layout/Layout.jsx'
 
 import { Icon, Row, Col, Card, Steps, Button, message } from 'antd'
 
@@ -88,4 +88,4 @@ class HomeContainer extends Component {
   }
 }
 
-export default Layout(connect()(HomeContainer), 'Home')
+export default LayoutWrapper(HomeContainer  )

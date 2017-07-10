@@ -35,6 +35,7 @@ const test = () => (
     <p>Test Page</p>
   </div>
 )
+
 const fakeAuth = {
   isAuthenticated: true,
   authenticate(cb) {

@@ -88,4 +88,4 @@ class HomeContainer extends Component {
   }
 }
 
-export default LayoutWrapper(HomeContainer  )
+export default LayoutWrapper(connect()(HomeContainer))

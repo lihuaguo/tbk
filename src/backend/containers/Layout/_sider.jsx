@@ -52,7 +52,7 @@ export default class Lmenu extends Component {
         <Menu.Item key="home">
           <Link to="/home">
             <Icon type="laptop" />
-            {!this.props.collapsed && <span className="nav-text">快速入门</span>}
+            {!this.props.collapsed && <span className="nav-text">网站设置</span>}
           </Link>
         </Menu.Item>
         <Menu.Item key="user">
@@ -61,8 +61,8 @@ export default class Lmenu extends Component {
             {!this.props.collapsed && <span className="nav-text">用户管理</span>}
           </Link>
         </Menu.Item>
-        <SubMenu key="general" title={<span><Icon type="team" /><span className="nav-text">基础组件</span></span>}>
-          <Menu.Item key="button"><Link to="/general/button">按钮</Link></Menu.Item>
+        <SubMenu key="general" title={<span><Icon type="team" /><span className="nav-text">商品管理</span></span>}>
+          <Menu.Item key="button"><Link to="/general/button"></Link></Menu.Item>
           <Menu.Item key="icon"><Link to="/general/icon">图标</Link></Menu.Item>
         </SubMenu>
         <Menu.Item key="setting">

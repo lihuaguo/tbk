@@ -24,7 +24,8 @@
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.1",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "ws": "^3.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
